@@ -24,7 +24,7 @@ $(function() {
 ? if ($c->user) {
       <a href="/signout">Sign out</a>  
 ? } else {
-      <a href="/signin"><img src="/img/signin.png" /></a>  
+      <a href="/signin"><img src="/img/signin.png" border="0" /></a>  
 ? }
     </div>
 ? if ($c->user) {
