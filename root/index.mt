@@ -57,6 +57,9 @@ $(function() {
         <input type="submit" value="change!" />
       </form>
     </div>
+? } else {
+    from <img src="/img/original.png" />
+    to <img src="/img/rotate.gif" />
 ? }
   </body>
 </html>
