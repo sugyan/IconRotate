@@ -17,7 +17,7 @@ my %type_map = (
 my $image = Imager->new(
     file     => $src,
     channels => 4,
-)->scale(xpixels => 72, ypixels => 72);
+)->scale(xpixels => 48, ypixels => 48);
 my @images = ();
 
 push @images, $image;
@@ -25,7 +25,7 @@ for (1 .. 59) {
     push @images, $image->rotate(
         degrees => defined $type_map{$type} ? $_ * 6 * $type_map{$type} : rand 360,
         back    => 'white',
-    )->crop(width => 72, height => 72);
+    )->crop(width => 48, height => 48);
 }
 my $file = file($src)->dir->file("$type.gif");
 Imager->write_multi({
