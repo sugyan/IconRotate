@@ -24,7 +24,7 @@ $(function() {
 ? if ($c->user) {
       <a href="/signout">Sign out</a>  
 ? } else {
-      <a href="/signin">Sign in</a>  
+      <a href="/signin"><img src="/img/signin.png" /></a>  
 ? }
     </div>
 ? if ($c->user) {
@@ -58,6 +58,7 @@ $(function() {
       </form>
     </div>
 ? } else {
+    <br />
     from <img src="/img/original.png" />
     to <img src="/img/rotate.gif" />
 ? }
