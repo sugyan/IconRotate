@@ -54,18 +54,24 @@ sub change_icon :Private {
     $c->detach('/default') unless $c->user;
 
     my $param = $c->req->param('icon');
-    $c->redirect('/') unless $param;
+    $c->redirect_and_detach('/') unless $param;
 
+    # 対象のアイコン画像
     my ($path1, $path2) = $c->user->obj->{user_id} =~ /^(\d*?(\d{2}))$/;
     my $dir  = $c->model('home')->subdir('root', 'images', $path2, $path1);
     my $file = $dir->file("$param.gif");
-
+    # 更新
     my $twitter = $c->model('twitter');
     $twitter->access_token       ($c->user->obj->{access_token}       );
     $twitter->access_token_secret($c->user->obj->{access_token_secret});
-    $twitter->update_profile_image([ $file->stringify ]);
+    my $result = $twitter->update_profile_image([ $file->stringify ]);
+    # 宣伝
+    $twitter->update({
+        status => '#iconguruguru http://t.co/3qESAUt',
+    });
+    $c->session->remove('icon');
 
-    $c->redirect('/');
+    $c->redirect('http://twitter.com/account/profile_image/' . $result->{screen_name});
 }
 
 1;

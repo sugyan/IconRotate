@@ -16,7 +16,8 @@ sub index :Path :Args(0) {
 
         if ($error) {
             $c->log(error => $error);
-            $c->redirect_and_detach('/login/failed');
+            $c->res->body('Sign in failed!');
+            $c->detach;
         }
     }
     else {
@@ -25,8 +26,6 @@ sub index :Path :Args(0) {
         );
     }
 
-    use YAML;
-    $c->log(debug => Dump $c->user->obj);
     $c->redirect_and_detach('/') if $auth;
 }
 
