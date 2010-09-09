@@ -63,6 +63,7 @@ $(function() {
     to <img src="/img/rotate.gif" />
 ? }
   <br /><br />
-  <a href="http://twitter.com/share" class="twitter-share-button" data-text="#iconguruguru" data-count="horizontal">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-text="#iconguruguru" data-count="horizontal">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script><br />
+  created by <a href="http://twitter.com/sugyan" target="_blank">@sugyan</a>.
   </body>
 </html>
