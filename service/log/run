@@ -1,0 +1,2 @@
+#!/bin/sh
+exec setuidgid sugyan multilog t n10 .

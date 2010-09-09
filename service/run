@@ -1,0 +1,6 @@
+#!/bin/sh
+cd /home/sugyan/dev/IconRotate
+exec \
+    setuidgid sugyan \
+    env PATH=/home/sugyan/perl5/perlbrew/bin:/home/sugyan/perl5/perlbrew/perls/current/bin:/home/sugyan/local/bin:/usr/local/bin:/bin:/usr/bin \
+    start_server --port=127.0.0.1:5000 --interval=15 -- starman
