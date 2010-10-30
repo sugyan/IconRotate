@@ -58,6 +58,11 @@ $(function() {
         <input type="submit" value="change!" />
       </form>
     </div>
+    <span style="color:#FF0000;">
+      <b>You can't restore</b> your profile image from here! <br />
+      Please save current image before change.<br />
+      To restore profile image, you have to upload original image from <a target="_blank" href="http://twitter.com/settings/profile">http://twitter.com/settings/profile</a>.
+    </span>
 ? } else {
     <br />
     from <img src="/img/original.png" />

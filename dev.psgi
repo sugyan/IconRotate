@@ -1,3 +1,4 @@
+use lib 'lib';
 use Plack::Builder;
 use Plack::App::Directory;
 use Path::Class;

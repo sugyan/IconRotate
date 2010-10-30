@@ -6,11 +6,4 @@ use RotateIcon;
 
 my $app = RotateIcon->new;
 $app->setup;
-
-builder {
-    enable 'Plack::Middleware::Static',
-        path => qr{^/(js/|css/|swf/|images?/|imgs?/|static/|[^/]+\.[^/]+$)},
-        root => $app->path_to('root')->stringify;
-
-    $app->handler;
-};
+$app->handler;
