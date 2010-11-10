@@ -14,7 +14,7 @@ sub index :Path :Args(0) {
     my $type = $c->req->param('type');
 
     my $dir      = $c->model('home')->subdir('root', 'images', $path2, $path1);
-    my $original = (grep { $_->basename =~ /^original/ } $dir->children)[0];
+    my $original = (sort { $b->stat->mtime <=> $a->stat->mtime } grep { $_->basename =~ /^original/ } $dir->children)[0];
     my $file     = $dir->file("$type.gif");
     # 比較的新しいファイルが既に存在していたらそのまま返す
     unless (-e $file && time - $file->stat->mtime < 300) {
