@@ -22,17 +22,17 @@ sub index :Path :Args(0) {
     }
     else {
         $auth = $c->auth->authenticate_twitter(
-            callback => $c->uri_for($c->req->path),
+            callback => $c->uri_for('/iconguruguru' . $c->req->path),
         );
     }
 
-    $c->redirect_and_detach('/') if $auth;
+    $c->redirect_and_detach('/iconguruguru') if $auth;
 }
 
 sub failed :Local :Args(0) {
     my ($self, $c) = @_;
 
-    $c->redirect_and_detach('/') if $c->user;
+    $c->redirect_and_detach('/iconguruguru') if $c->user;
 }
 
 1;

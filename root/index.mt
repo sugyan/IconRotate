@@ -5,13 +5,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>iconguruguru</title>
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-    <script type="text/javascript">google.load("jquery", "1.4.2");</script>
+    <script type="text/javascript">google.load("jquery", "1.5.1");</script>
     <script type="text/javascript">
 $(function() {
     $(".loading").each(function() {
         var img = $(this);
         $.ajax({
-            url: "/api/rotate?type=" + img.attr("id"),
+            url: "/iconguruguru/api/rotate?type=" + img.attr("id"),
             success: function(data) {
                 img.attr("src", data);
             }
@@ -23,9 +23,9 @@ $(function() {
   <body>
     <div class="header">
 ? if ($c->user) {
-      <a href="/signout">Sign out</a>  
+      <a href="/iconguruguru/signout">Sign out</a>
 ? } else {
-      <a href="/signin"><img src="/img/signin.png" border="0" /></a>  
+      <a href="/iconguruguru/signin"><img src="/iconguruguru/img/signin.png" border="0" /></a>
 ? }
     </div>
 ? if ($c->user) {
@@ -65,8 +65,8 @@ $(function() {
     </span>
 ? } else {
     <br />
-    from <img src="/img/original.png" />
-    to <img src="/img/rotate.gif" />
+    from <img src="/iconguruguru/img/original.png" />
+    to <img src="/iconguruguru/img/rotate.gif" />
 ? }
   <br /><br />
   <a href="http://twitter.com/share" class="twitter-share-button" data-text="#iconguruguru" data-count="horizontal">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script><br />
