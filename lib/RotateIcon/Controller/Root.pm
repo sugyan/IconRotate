@@ -67,7 +67,7 @@ sub change_icon :Private {
     my $result = $twitter->update_profile_image([ $file->stringify ]);
     # 宣伝
     $twitter->update({
-        status => '#iconguruguru http://t.co/3qESAUt',
+        status => '#iconguruguru http://t.co/e7uGxTb',
     });
     $c->session->remove('icon');
 
